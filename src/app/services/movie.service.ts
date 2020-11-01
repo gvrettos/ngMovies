@@ -1,7 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { delay } from "rxjs/operators";
-import { MOVIES } from '../mock/mock-movies';
 import { Movie } from '../model/movie';
 
 @Injectable({
@@ -9,11 +8,11 @@ import { Movie } from '../model/movie';
 })
 export class MovieService {
 
-  constructor() { }
+  moviesUrl = "http://localhost:3000/movies";
+
+  constructor(private httpClient: HttpClient) { }
 
   getMovies(): Observable<Movie[]> {
-    return of(MOVIES).pipe(
-      delay(5000)
-    );
+    return this.httpClient.get<Movie[]>(this.moviesUrl);
   }
 }

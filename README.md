@@ -2,7 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+Also `node v14.15.0` and `npm 6.14.8` are used.
+
 ## Development server
+
+First install the json-server (https://github.com/typicode/json-server) that will host the data.
+
+`cd ngMovies/json-server`
+
+`npm install -g json-server`
+
+Run `json-server --watch db.json -d 3000`. `-d 3000` will add a delay of 3 seconds to perform the operations. It can be ommitted
+
+Access the data via `http://localhost:3000/movies`.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
