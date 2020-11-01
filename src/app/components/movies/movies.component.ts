@@ -21,6 +21,10 @@ export class MoviesComponent implements OnInit {
 		this.selectedMovie = movie;
 	}
 
+	clearSelected() {
+		this.selectedMovie = undefined;
+	}
+
 	getMovies() {
 		this.movieService.getMovies().subscribe(movies => {
 			this.movies = movies;

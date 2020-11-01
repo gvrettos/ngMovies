@@ -15,4 +15,20 @@ export class MovieService {
   getMovies(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(this.moviesUrl);
   }
+
+  updateMovie(movie: Movie): Observable<Movie> {
+    return this.httpClient.put<Movie>(this.moviesUrl + "/" + movie.id, movie);
+  }
+
+  createMovie(movie: Movie): Observable<Movie> {
+    return this.httpClient.post<Movie>(this.moviesUrl, movie);
+  }
+
+  createOrUpdateMovie(movie: Movie): Observable<Movie> {
+    if (movie.id) {
+      return this.updateMovie(movie);
+    } else {
+      return this.createMovie(movie);
+    }
+  }
 }
