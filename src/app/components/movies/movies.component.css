@@ -11,12 +11,6 @@
     cursor: pointer;
 }
 
-.movie {
-    border: 1px solid;
-    border-radius: 3px;
-    padding: 20px;
-}
-
 .selected {
     font-weight: bold;
     color: blue;

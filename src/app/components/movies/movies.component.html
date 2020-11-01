@@ -4,14 +4,8 @@
         (click)="selectMovie(movie)"
         [class.selected]="movie === selectedMovie"
     >
-        <div class="movie">
-            <div>#{{movie.id}}</div>
-            <div><strong>Title: </strong>{{movie.title | uppercase}}</div>
-            <div><strong>Year: </strong>{{movie.year}}</div>
-            <div><strong>Actor: </strong>{{movie.actor}}</div>
-            <div><strong>Gross (with inflation): </strong>${{movie.gross_inflated_in_USD}}</div>
-            <div> <img src="https://xl.movieposterdb.com/{{movie.posterToken}}.jpg" alt="{{ movie.title }} poster" width="200"></div>
-        </div>
+        #{{movie.id}} {{movie.title}}
     </li>
 </ul>
-  
+
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
