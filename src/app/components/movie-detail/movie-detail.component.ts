@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/movie';
-import { MovieService } from 'src/app/services/movie.service';
+import { MovieStateService } from 'src/app/services/movie-state.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,15 +12,14 @@ export class MovieDetailComponent implements OnInit {
   @Input()
   movie: Movie;
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieStateService: MovieStateService
+  ) { }
 
   ngOnInit(): void {
   }
 
   saveMovie() {
-    this.movieService.createOrUpdateMovie(this.movie).subscribe(result => {
-      console.log(result);
-    });
+    this.movieStateService.createOrUpdateMovie(this.movie).subscribe();
   }
-
 }
