@@ -1,15 +1,13 @@
-<div class="content">
-    <h2>List of movies</h2>
-    <ul class="movies">
-        <li *ngFor="let movie of movieStateService.movies"
-            (click)="selectMovie(movie)"
-            [class.selected]="movie === selectedMovie"
-        >
-            #{{movie.id}} {{movie.title}}
-        </li>
-    </ul>
+<h2>List of movies</h2>
+<ul class="movies">
+    <li *ngFor="let movie of movieStateService.movies"
+        (click)="selectMovie(movie)"
+        [class.selected]="movie === selectedMovie"
+    >
+        #{{movie.id}} {{movie.title}}
+    </li>
+</ul>
 
-    <button (click)="clearSelected()">Clear selected!</button>
+<button (click)="clearSelected()">Clear selected!</button>
 
-    <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
-</div>
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
