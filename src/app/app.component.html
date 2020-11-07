@@ -1,6 +1,10 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <span>Welcome</span>
+  <span>
+    <nav>
+      <a routerLink="/movies">Movies</a>
+    </nav>
+  </span>
 </div>
 
 <div class="content" role="main">
@@ -13,4 +17,6 @@
 </div>
 
 <h2>An application to find and learn more about James Bond movies during the last almost 60 years!</h2>
-<app-movies></app-movies>
+
+<!-- A placeholder that Angular dynamically fills based on the current router state. -->
+<router-outlet></router-outlet>
