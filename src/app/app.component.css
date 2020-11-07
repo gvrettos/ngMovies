@@ -72,14 +72,3 @@
     min-width: 30%;
     position: relative;
   }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
