@@ -5,4 +5,5 @@ export class Movie {
     actor: string;
     posterToken: string;
     gross_inflated_in_USD: number;
+    rating: number;
 }

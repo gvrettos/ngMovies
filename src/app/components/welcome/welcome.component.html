@@ -1,1 +1,8 @@
 <h2>Learn more about James Bond movies by travelling through a journey of {{ currentYear - 1962 }} years!</h2>
+
+<h3>
+    Highest rated movies:
+</h3>
+<div *ngFor="let movie of highestRatedMovies | slice:0:3">
+    {{movie.title}}
+</div>

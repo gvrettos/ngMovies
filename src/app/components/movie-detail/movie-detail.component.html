@@ -19,5 +19,10 @@
         <input [(ngModel)]="movie.title" placeholder="Enter movie title">
     </div>
 
+    <div>
+        <label for="rating">Rating: </label>
+        <input [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
+    </div>
+
     <button (click)="saveMovie()">Save</button>
 </div>
