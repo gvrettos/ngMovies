@@ -16,6 +16,10 @@ export class MovieService {
     return this.httpClient.get<Movie[]>(this.moviesUrl);
   }
 
+  getMovie(id: number): Observable<Movie> {
+    return this.httpClient.get<Movie>(this.moviesUrl + "/" + id);
+  }
+
   updateMovie(movie: Movie): Observable<Movie> {
     return this.httpClient.put<Movie>(this.moviesUrl + "/" + movie.id, movie);
   }

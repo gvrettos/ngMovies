@@ -22,6 +22,10 @@ export class MovieStateService {
     );
   }
 
+  getMovie(id: number): Observable<Movie> {
+    return this.movieService.getMovie(id);
+  }
+
   updateMovie(movie: Movie): Observable<Movie> {
     return this.movieService.updateMovie(movie);
   }
