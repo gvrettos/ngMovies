@@ -7,7 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 const routes: Routes = [
-  { path: 'movies', component: MoviesComponent },
+  { path: 'movies', component: MoviesComponent, data: { title: 'List of movies'} },
   { path: 'movies/:id', component: MovieDetailComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
