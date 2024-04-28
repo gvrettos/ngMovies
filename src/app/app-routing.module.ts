@@ -5,9 +5,19 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { MoviesResolverService } from './resolvers/movies-resolver.service';
 
 const routes: Routes = [
-  { path: 'movies', component: MoviesComponent, data: { title: 'List of movies'} },
+  { 
+    path: 'movies', 
+    component: MoviesComponent, 
+    data: { 
+      title: 'List of movies'
+    }, 
+    resolve: { 
+      movies: MoviesResolverService
+    } 
+  },
   { path: 'movies/:id', component: MovieDetailComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },

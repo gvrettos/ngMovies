@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Movie } from 'src/app/model/movie';
 import { MovieStateService } from 'src/app/services/movie-state.service';
 
 @Component({
@@ -16,15 +17,14 @@ export class MoviesComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-
 		this.getMovies();
 	}
 
 	getMovies() {
 		this.title = this.route.snapshot.data.title;
 
-		this.movieStateService.getMovies().subscribe(movies => {
-			this.movieStateService.movies = movies;
+		this.route.data.subscribe((data: {movies: Movie[]}) => {
+			this.movieStateService.movies = data.movies;
 		});
 	}
 
