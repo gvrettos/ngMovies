@@ -6,6 +6,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MoviesResolverService } from './resolvers/movies-resolver.service';
+import { MovieDetailResolverService } from './resolvers/movie-detail-resolver.service';
 
 const routes: Routes = [
   { 
@@ -18,7 +19,13 @@ const routes: Routes = [
       movies: MoviesResolverService
     } 
   },
-  { path: 'movies/:id', component: MovieDetailComponent },
+  { 
+    path: 'movies/:id', 
+    component: MovieDetailComponent,
+    resolve: {
+      movieDetail: MovieDetailResolverService
+    }
+  },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }

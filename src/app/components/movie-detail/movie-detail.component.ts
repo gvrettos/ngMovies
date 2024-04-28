@@ -21,8 +21,9 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.params['id']);
-    this.movieStateService.getMovie(id)
-                          .subscribe(movie => this.movie = movie);
+    this.route.data.subscribe((data: {movieDetail: Movie}) => {
+      this.movie = data.movieDetail;
+    });
   }
 
   saveMovie() {
