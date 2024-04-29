@@ -18,8 +18,29 @@ export class WelcomeComponent implements OnInit {
     this.currentYear = new Date().getFullYear();
 
     this.movieStateService.getMovies().subscribe(
-      movies => this.highestRatedMovies = movies.sort((a, b) => +a.rating < +b.rating ? 1 : -1)
+      movies => {
+        this.highestRatedMovies = this.sortByRatingDesc(movies);
+      }
     );
+  }
+
+  sortByRatingDesc(movies: Movie[]): Movie[] {
+    return movies.sort((a, b) => {
+        const ratingA = +a.rating;
+        const ratingB = +b.rating;
+    
+        // Handle missing or invalid ratings first
+        if (isNaN(ratingA)) {
+          // Move A towards the end
+          return 1;
+        }
+        if (isNaN(ratingB)) {
+          // Move B towards the end
+          return -1;
+        }
+        // Compare valid ratings numerically
+        return ratingB - ratingA; // Descending order
+    });
   }
 
 }

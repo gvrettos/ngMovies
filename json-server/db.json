@@ -6,8 +6,7 @@
       "year": 1962,
       "actor": "Sean Connery",
       "posterToken": "08_08/1962/55928/xl_55928_c3c65b8f",
-      "gross_inflated_in_USD": 440759072,
-      "rating": "8"
+      "gross_inflated_in_USD": 440759072
     },
     {
       "id": 2,
@@ -15,8 +14,7 @@
       "year": 1963,
       "actor": "Sean Connery",
       "posterToken": "05_01/1963/0057076/xl_3747_0057076_eebf5402",
-      "gross_inflated_in_USD": 576277964,
-      "rating": "9"
+      "gross_inflated_in_USD": 576277964
     },
     {
       "id": 3,
@@ -24,8 +22,7 @@
       "year": 1964,
       "actor": "Sean Connery",
       "posterToken": "06_03/1964/0058150/xl_102931_0058150_a1094862",
-      "gross_inflated_in_USD": 912257512,
-      "rating": "10"
+      "gross_inflated_in_USD": 912257512
     },
     {
       "id": 4,
@@ -49,7 +46,8 @@
       "year": 1969,
       "actor": "George Lazenby",
       "posterToken": "08_06/1969/64757/xl_64757_70d411c7",
-      "gross_inflated_in_USD": 505899782
+      "gross_inflated_in_USD": 505899782,
+      "rating": "8"
     },
     {
       "id": 7,
@@ -81,7 +79,8 @@
       "year": 1977,
       "actor": "Roger Moore",
       "posterToken": "06_02/1977/0076752/xl_90597_0076752_ccaf6842",
-      "gross_inflated_in_USD": 692713752
+      "gross_inflated_in_USD": 692713752,
+      "rating": "10"
     },
     {
       "id": 11,
@@ -185,7 +184,8 @@
       "year": 2012,
       "actor": "Daniel Craig",
       "posterToken": "12_09/2012/1074638/xl_1074638_bcf6732c",
-      "gross_inflated_in_USD": 1108561008
+      "gross_inflated_in_USD": 1108561008,
+      "rating": "9"
     },
     {
       "id": 24,
