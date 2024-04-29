@@ -12,6 +12,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ImdblinkPipe } from './pipes/imdblink.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     WelcomeComponent,
     NotFoundComponent,
     ImdblinkPipe,
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

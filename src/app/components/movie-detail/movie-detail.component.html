@@ -1,38 +1,39 @@
 <div *ngIf="movie">
     <h2>Movie Details</h2>
 
-    <div class="movie">
-        <div>#{{movie.id}}</div>
-        <div>
-            <strong>Title: </strong><span [innerHTML]="movie.title | imdblink:movie.imdb_id"></span>
+    <div *appUnless="!movie">
+        <div class="movie">
+            <div>#{{movie.id}}</div>
+            <div>
+                <strong>Title: </strong><span [innerHTML]="movie.title | imdblink:movie.imdb_id"></span>
+            </div>
+            <div>
+                <strong>Year: </strong><span [appHighlight]="'orange'">{{movie.year}}</span>
+            </div>
+            <div>
+                <strong>Actor: </strong><span [appHighlight]="'cyan'">{{movie.actor}}</span>
+            </div>
+            <div>
+                <strong>Gross (with inflation): </strong><span [appHighlight]="'yellow'">{{movie.gross_inflated_in_USD | currency:'USD':'symbol-narrow':'9.0'}}</span>
+            </div>
+            <div>
+                <img src="https://xl.movieposterdb.com/{{movie.posterToken}}.jpg" 
+                    alt="{{ movie.title }} poster" 
+                    width="200">
+            </div>
         </div>
-        <div>
-            <strong>Year: </strong><span [appHighlight]="'orange'">{{movie.year}}</span>
-        </div>
-        <div>
-            <strong>Actor: </strong><span [appHighlight]="'cyan'">{{movie.actor}}</span>
-        </div>
-        <div>
-            <strong>Gross (with inflation): </strong><span [appHighlight]="'yellow'">{{movie.gross_inflated_in_USD | currency:'USD':'symbol-narrow':'9.0'}}</span>
-        </div>
-        <div>
-            <img src="https://xl.movieposterdb.com/{{movie.posterToken}}.jpg" 
-                alt="{{ movie.title }} poster" 
-                width="200">
-        </div>
-    </div>
 
-    <div>
-        <label for="title">Title: </label>
-        <input [(ngModel)]="movie.title" placeholder="Enter movie title">
-    </div>
+        <div>
+            <label for="title">Title: </label>
+            <input [(ngModel)]="movie.title" placeholder="Enter movie title">
+        </div>
 
-    <div>
-        <label for="rating">Rating: </label>
-        <input [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
-    </div>
+        <div>
+            <label for="rating">Rating: </label>
+            <input [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
+        </div>
 
-    <button (click)="saveMovie()">Save</button>
-    <br/>
+        <button (click)="saveMovie()">Save</button>
+    </div>
     <button (click)="goBack()">Back</button>
 </div>
