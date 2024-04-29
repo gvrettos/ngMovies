@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ImdblinkPipe } from './pipes/imdblink.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MovieDetailComponent,
     NavbarComponent,
     WelcomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ImdblinkPipe
   ],
   imports: [
     BrowserModule,

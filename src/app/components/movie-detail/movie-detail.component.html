@@ -3,7 +3,7 @@
 
     <div class="movie">
         <div>#{{movie.id}}</div>
-        <div><strong>Title: </strong>{{movie.title | uppercase}}</div>
+        <div><strong>Title: </strong><span [innerHTML]="movie.title | imdblink:movie.imdb_id"></span></div>
         <div><strong>Year: </strong>{{movie.year}}</div>
         <div><strong>Actor: </strong>{{movie.actor}}</div>
         <div><strong>Gross (with inflation): </strong>{{movie.gross_inflated_in_USD | currency:'USD':'symbol-narrow':'9.0'}}</div>
