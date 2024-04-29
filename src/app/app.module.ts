@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ImdblinkPipe } from './pipes/imdblink.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ImdblinkPipe } from './pipes/imdblink.pipe';
     NavbarComponent,
     WelcomeComponent,
     NotFoundComponent,
-    ImdblinkPipe
+    ImdblinkPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

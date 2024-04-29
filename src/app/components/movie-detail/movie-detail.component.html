@@ -3,10 +3,18 @@
 
     <div class="movie">
         <div>#{{movie.id}}</div>
-        <div><strong>Title: </strong><span [innerHTML]="movie.title | imdblink:movie.imdb_id"></span></div>
-        <div><strong>Year: </strong>{{movie.year}}</div>
-        <div><strong>Actor: </strong>{{movie.actor}}</div>
-        <div><strong>Gross (with inflation): </strong>{{movie.gross_inflated_in_USD | currency:'USD':'symbol-narrow':'9.0'}}</div>
+        <div>
+            <strong>Title: </strong><span [innerHTML]="movie.title | imdblink:movie.imdb_id"></span>
+        </div>
+        <div>
+            <strong>Year: </strong><span [appHighlight]="'orange'">{{movie.year}}</span>
+        </div>
+        <div>
+            <strong>Actor: </strong><span [appHighlight]="'cyan'">{{movie.actor}}</span>
+        </div>
+        <div>
+            <strong>Gross (with inflation): </strong><span [appHighlight]="'yellow'">{{movie.gross_inflated_in_USD | currency:'USD':'symbol-narrow':'9.0'}}</span>
+        </div>
         <div>
             <img src="https://xl.movieposterdb.com/{{movie.posterToken}}.jpg" 
                 alt="{{ movie.title }} poster" 
