@@ -27,6 +27,7 @@ const routes: Routes = [
     }
   },
   { path: 'welcome', component: WelcomeComponent },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
