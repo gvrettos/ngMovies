@@ -35,8 +35,8 @@
                 <input matInput [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
             </mat-form-field>
         </p>
-        
-        <button mat-raised-button color="primary" (click)="saveMovie()">Save</button>
+
+        <button mat-raised-button color="primary" (click)="saveMovie()" [disabled]="isSaving">{{ !isSaving ? 'Save': 'Saving...' }}</button>
         <br/><br/>
     </div>
     <button mat-raised-button color="warn" (click)="goBack()">Back</button>
