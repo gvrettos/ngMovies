@@ -1,3 +1,6 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* For more pre-built themes check: https://v10.material.angular.io/guide/theming#using-a-pre-built-theme */
+
 /* You can add global styles to this file, and also import other style files */
 .content {
     display: flex;

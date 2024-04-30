@@ -23,17 +23,21 @@
             </div>
         </div>
 
-        <div>
-            <label for="title">Title: </label>
-            <input [(ngModel)]="movie.title" placeholder="Enter movie title">
-        </div>
-
-        <div>
-            <label for="rating">Rating: </label>
-            <input [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
-        </div>
-
-        <button (click)="saveMovie()">Save</button>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput [(ngModel)]="movie.title" placeholder="Enter movie title">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Rating</mat-label>
+                <input matInput [(ngModel)]="movie.rating" placeholder="Enter movie rating (1-10)">
+            </mat-form-field>
+        </p>
+        
+        <button mat-raised-button color="primary" (click)="saveMovie()">Save</button>
+        <br/><br/>
     </div>
-    <button (click)="goBack()">Back</button>
+    <button mat-raised-button color="warn" (click)="goBack()">Back</button>
 </div>
