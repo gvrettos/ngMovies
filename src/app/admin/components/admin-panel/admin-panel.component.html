@@ -1,1 +1,13 @@
-<p>admin-panel works!</p>
+<div *ngIf="!loggedInUser">
+    <h1>Hello, unknown</h1>
+    <div>This is some content for any public user</div>
+</div>
+
+<div *ngIf="loggedInUser">
+    <h1>Hello, admin {{loggedInUser}}.</h1>
+    <div>This is some content meant to be displayed only to admin.</div>
+</div>
+<br/>
+
+<button *ngIf="!loggedInUser" class="btn btn-default" (click)="login()">Login</button>
+<button *ngIf="loggedInUser" class="btn btn-default" (click)="logout()">Logout</button>

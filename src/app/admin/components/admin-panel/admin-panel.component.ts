@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-admin-panel',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private oauthService: OAuthService) { }
 
   ngOnInit(): void {
+  }
+
+  public login() {
+    this.oauthService.initCodeFlow();
+  }
+
+  public logout() {
+    this.oauthService.logOut();
+  }
+
+  public get loggedInUser() {
+    let claims = this.oauthService.getIdentityClaims();
+    return claims ? claims["given_name"] : null;
   }
 
 }
