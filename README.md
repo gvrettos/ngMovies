@@ -1,39 +1,54 @@
 # NgMovies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+An application demonstrating some basic Angular concepts. 
 
-Also `node v14.15.0` and `npm 6.14.8` are used.
+It revolves around a collection of movies. The functionalities include: 
+- The movies are listed. 
+- For each one of them some of the information can be edited. 
+- A list of the highest rated movies is provided.
+
+
+## Goal
+
+This is structured as a walkthrough on how to:
+- create components (master/detail)
+- create services
+- communicate with an API
+- use custom state management
+- navigate through routing
+- use resolvers
+- use pipes (built-in + custom)
+- use custom directives
+- take advantage of very basic security implementing OAuth2
+- use very basic Angular Material UI elements
+
+
+## Prerequisites
+
+This project was generated with:
+- node version [14.15.0](https://nodejs.org/en/blog/release/v14.15.0)
+- npm version [6.14.8](https://www.npmjs.com/package/npm/v/6.14.8)
+- Angular CLI version [10.2.0](https://www.npmjs.com/package/@angular/cli/v/10.2.0).
+
+
+## Data
+
+- Data is bundled in the source code under `json-server` folder. Check [## Development server](#development-server) for more information. 
+- There is a `db.json` file where everything is saved. 
+- Any updates on the data are persisted there, too.
+
 
 ## Development server
 
-First install the json-server (https://github.com/typicode/json-server) that will host the data.
+1. Install the json-server (https://github.com/typicode/json-server) that will host the data.
+    - `cd ngMovies/json-server`
+    - `npm install -g json-server`
 
-`cd ngMovies/json-server`
+2. Run `json-server --watch db.json -d 3000`. 
+    - `-d 3000` will add a delay of 3 seconds to perform the operations. It can be ommitted
 
-`npm install -g json-server`
+3. Access the data via `http://localhost:3000/movies`.
 
-Run `json-server --watch db.json -d 3000`. `-d 3000` will add a delay of 3 seconds to perform the operations. It can be ommitted
-
-Access the data via `http://localhost:3000/movies`.
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Run `ng serve` for a dev server. 
+    - Navigate to `http://localhost:4200/`. 
+    - The app will automatically reload if you change any of the source files.
