@@ -120,5 +120,8 @@
         }
       }
     }},
-  "defaultProject": "ngMovies"
+  "defaultProject": "ngMovies",
+  "cli": {
+    "analytics": false
+  }
 }
