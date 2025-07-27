@@ -28,4 +28,8 @@ export class MoviesComponent implements OnInit {
 		});
 	}
 
+	get movies() {
+		return this.movieStateService.movies;
+	}
+
 }

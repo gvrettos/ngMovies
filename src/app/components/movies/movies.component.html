@@ -1,6 +1,6 @@
 <h2>{{ title }}</h2>
 <ul class="movies">
-    <li *ngFor="let movie of movieStateService.movies"
+    <li *ngFor="let movie of movies"
         routerLink="/movies/{{movie.id}}"
     >
         #{{movie.id}} {{movie.title}}

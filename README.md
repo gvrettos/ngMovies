@@ -26,9 +26,9 @@ This is structured as a walkthrough on how to:
 ## Prerequisites
 
 This project was generated with:
-- node version [14.15.0](https://nodejs.org/en/blog/release/v14.15.0)
-- npm version [6.14.8](https://www.npmjs.com/package/npm/v/6.14.8)
-- Angular CLI version [10.2.0](https://www.npmjs.com/package/@angular/cli/v/10.2.0).
+- node version [22.17.1](https://nodejs.org/en/blog/release/v22.17.1)
+- npm version [10.9.2](https://www.npmjs.com/package/npm/v/10.9.2)
+- Angular CLI version [18.2.20](https://www.npmjs.com/package/@angular/cli/v/18.2.20).
 
 
 ## Data
