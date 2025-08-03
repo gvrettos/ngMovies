@@ -9,6 +9,8 @@ import { authCodeFlowConfig } from './auth.config'
 })
 export class AppComponent {
 
+  title = 'ngMovies';
+
   constructor(private oauthService: OAuthService) {
     this.configOAuth();
   }

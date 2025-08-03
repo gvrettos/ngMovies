@@ -1,12 +1,30 @@
 import { TestBed } from '@angular/core/testing';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter, RouterModule } from '@angular/router';
+import { provideLocationMocks } from '@angular/common/testing';
+
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent
       ],
+      imports: [
+        OAuthModule.forRoot(),
+        RouterModule.forRoot([])
+      ],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideRouter([]),
+        provideLocationMocks()
+      ]
     }).compileComponents();
   });
 
@@ -22,10 +40,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ngMovies');
   });
 
-  it('should render title', () => {
+  it('should render router-outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ngMovies app is running!');
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('router-outlet')).not.toBeNull();
   });
 });
